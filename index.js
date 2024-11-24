@@ -3,10 +3,13 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const userRoutes = require('./routes/userRoutes');
 const roleRoutes = require('./routes/roleRoutes');
-const authRoutes = require('./routes/authRoutes')
+const authRoutes = require('./routes/authRoutes');
+const cors = require('cors');
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
+
+app.use(cors());
 
 // MongoDB connection
 mongoose.connect('mongodb+srv://21ee01037:xzijgYH3ABETU1y7@cluster0.grkk4.mongodb.net/')
